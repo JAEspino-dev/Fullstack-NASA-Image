@@ -6,7 +6,7 @@ https://fullstack-nasa-image.onrender.com
 
 # 📋 How to use
 Enter a date.   
-Get a NASA Image. 
+Get a NASA Image.  
 If you like it, add it to the groupchat so other members can upvote!  
 
 # 📷 Images
