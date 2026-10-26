@@ -5,9 +5,9 @@ Use this program if you want to leave a message on a forum!
 https://fullstack-nasa-image.onrender.com
 
 # 📋 How to use
-Use this link: 
-Enter a message.
-Post items that have an impulse to buy, and then move to actual wish list once you're sure you want to buy!
+Enter a date.   
+Get a NASA Image. 
+If you like it, add it to the groupchat so other members can upvote!  
 
 # 📷 Images
 ![NASA Image App Screenshot](public/img/screenshot.png)
