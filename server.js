@@ -2,6 +2,7 @@
 
 // set up ======================================================================
 // get all the tools we need
+require('dotenv').config();
 const express  = require('express');
 const app      = express();
 const port     = process.env.PORT || 8000;
@@ -16,8 +17,9 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const session      = require('express-session');
 
-const configDB = require('./config/database.js');
-
+// const configDB = require('./config/database.js');
+const configDB = {"url":process.env.MONGODB_URI}
+console.log(configDB)
 let db
 
 // configuration ===============================================================
