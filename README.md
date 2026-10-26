@@ -1,5 +1,5 @@
 # Fullstack-NASA-Image
-Use this program if you want to leave a message on a forum!
+Use this program if you want to save and share NASA images of the day!  
 
 # Link
 https://fullstack-nasa-image.onrender.com
@@ -19,6 +19,7 @@ Fully responsive design for desktop and mobile.
 HTML5 – structure,
 CSS3 – responsive design and background,
 JavaScript - frontend and backend.
+Node - backend.  
 
 # 🧠 What I Learned
 How to work with Node.
