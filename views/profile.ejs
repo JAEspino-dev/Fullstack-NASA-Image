@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>King of the Hill NASA Image</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="profileStyle.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </header>
+    <div id="toFlex">
+        <main>
+
+            <section>
+                <h1>King of the Hill NASA Image</h1>
+                <p>Use this program if you want to see the NASA image of the day! Choose a date, get the image of the
+                    day, and then store in your cards below.
+                </p>
+            </section>
+
+            <section>
+                <h1>Step 1: Enter a date:</h1>
+                <input class="inputValue" type="date" name="" value="">
+                <button type="button" name="button">Get Picture</button>
+
+                <!-- <h2>Name</h2> -->
+                <img id="image" src="" alt="">
+                <p id="date"></p>
+                <h3></h3>
+            </section>
+            <section id="videoBox">
+                <video id="video" controls width="250">
+                    <source src="" type="video/webm" />
+                </video>
+            </section>
+
+            <section>
+                <h2>Step 2: Save Image or Video?</h2>
+                <p>Do you want to save the image? Enter a short description about what you like about it!</p>
+                <% { %>
+                    <form action="/saveUserImage" method="POST">
+                        <!-- <input type="date" name="date"> -->
+                        <!-- <input type="text" placeholder="Employee Name" name="employeeName"> -->
+                        <input type="hidden" id="imageUrl" name="imageUrl" value="">
+                        <input type="hidden" id="imageDate" name="imageDate" value="">
+                        <input value="<%= user.local.email %>" type="text" placeholder="Description" name="description">
+                        <button type="submit">Submit</button>
+                    </form>
+                    <% } %>
+            </section>
+
+            <div class="lists">
+
+                <section id="unapprovedExpenses">
+                    <h2>User Submitted Images</h2>
+                    <p>Check out the images that others liked!</p>
+                    <ul class="">
+                        <!-- Loop through quotes objects from MongoDB -->
+                        <% for(let i=0; i < listOfSavedImagesExcludingTopVoted.length; i++) {%>
+                            <li class="items">
+                                <p>
+                                    User: <%= listOfSavedImagesExcludingTopVoted[i].user %> says "<%= listOfSavedImagesExcludingTopVoted[i].userDescription %>"
+                                </p>
+                                <span>
+                                    Image Date: <%= listOfSavedImagesExcludingTopVoted[i].imageDate %>
+                                </span>
+                                <a target="_blank" href="<%= listOfSavedImagesExcludingTopVoted[i].imageUrl %>">
+                                     Link to Image
+                                </a>
+                            </li>
+                            <span>
+                                <%= listOfSavedImagesExcludingTopVoted[i].counter %>
+                            </span>
+                            <button class="upvote"
+                                data-msg-id="<%= listOfSavedImagesExcludingTopVoted[i]._id %>">Upvote</button>
+                            <button class="downVote"
+                                data-msg-id="<%= listOfSavedImagesExcludingTopVoted[i]._id %>">Downvote</button>
+                            <button class="deleteButton"
+                                data-msg-id="<%= listOfSavedImagesExcludingTopVoted[i]._id %>">Delete</button>
+                            <% } %>
+                    </ul>
+                </section>
+
+                <section id="approvedExpenses">
+                    <h2>King of the Hill</h2>
+                    <p>Most Upvoted Item(s)!</p>
+                    <ul>
+                        <% for(let i=0; i < mostUpvotedImage.length; i++) {%>
+                            <li>
+                                 <p>
+                                    User: <%= mostUpvotedImage[i].user %>
+                                    says "<%= mostUpvotedImage[i].userDescription %>"
+                                </p>
+                                <span>
+                                    Image Date: <%= mostUpvotedImage[i].imageDate %>
+                                </span>
+                                <a target="_blank" href="<%= mostUpvotedImage[i].imageUrl %>">
+                                     Link to Image
+                                </a>
+                            </li>
+                            <span>
+                                <%= mostUpvotedImage[i].counter %>
+                            </span>
+                            <button class="upvote"
+                                data-msg-id="<%= mostUpvotedImage[i]._id %>">Upvote</button>
+                            <button class="downVote"
+                                data-msg-id="<%= mostUpvotedImage[i]._id %>">Downvote</button>
+                            <button class="deleteButton"
+                                data-msg-id="<%= mostUpvotedImage[i]._id %>">Delete</button>
+                            <% } %>
+                    </ul>
+                </section>
+
+
+            </div>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
+

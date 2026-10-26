@@ -1,0 +1,129 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img {
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+  height: auto;
+}
+
+section {
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+}
+#videoBox{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+video {
+  display: none;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+body {
+  background-image: url('img/images\ \(5\).jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 5% 5% 0 5%;
+   min-height: 100vh;
+  word-wrap: break-word;
+  margin-bottom:1%;
+  color:yellow;
+}
+
+header {
+  height: 5%;
+  text-align:right;
+  padding-right:5%;
+  padding-top:2.5%;
+}
+
+main {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.lists {
+  margin-top: 2%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.lists section {
+  flex: 1;
+  min-width: 0;
+  padding: 20px;
+}
+
+ul {
+  text-align: left;
+}
+
+li {
+  text-decoration: solid;
+  list-style: none;
+}
+
+img {
+  height: 300px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  border-radius: 10px;
+}
+
+#unapprovedExpenses {
+  background: rgb(225, 150, 11);
+  border: 5px solid black;
+}
+
+#approvedExpenses {
+  background: rgb(10, 150, 8);
+  border: 5px solid black;
+}
+
+#checkWritten {
+  background: rgb(6, 126, 196);
+  border: 5px solid black;
+}
+#toFlex{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+section {
+  border-radius: 10px;
+}
